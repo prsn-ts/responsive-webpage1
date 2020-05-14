@@ -142,7 +142,7 @@ body {background: url(../img/header_bg.jpg) repeat-x center top; }
 }
 
 /* 컨텐츠 영역 */
-.column {padding: 15px; border-bottom: 1px solid #dbdbdb;}
+.column {padding: 15px;}
 .column.col1 {}
 .column.col2 {}
 .column.col3 {border-bottom: 0;}
@@ -414,6 +414,11 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 	.content_center {border-right: 0; margin-right: 0;} /*오른쪽 컨텐츠가 내려가고나서 border값 바꾸기*/
 	.content_right {position: static; width: 100%; border-top: 1px solid #dbdbdb;} /* position: static; -> 포지션을 기본값으로 만들어주는 거라고 함 좀더 공부할 것.*/
 
+	/* col7,8,9 사이드 컨텐츠(이미지 3개 다 출력)*/
+	.content_right {overflow: hidden;}
+	.content_right .column {float: left; width: 33.3333%; box-sizing: border-box;}
+	.content_right .col7 {border-right: 1px solid #ddd;}
+	.content_right .col8 {border-right: 1px solid #ddd;}
 }
 /* 화면 너비 0 ~ 768px */
 @media (max-width: 768px) {
@@ -458,6 +463,11 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 	/* 이미지 라이트 박스 2단의 4개씩 총 8개 보이기 */
 	.square a {width: 49%;}
 	.square a:nth-child(5) {display: none;}
+
+	/* col7,8,9 사이드 컨텐츠(이미지 2개만 출력) */
+	.content_right .column {width: 50%;}
+	.content_right .column.col8 {border-right: 0;}
+	.content_right .column.col9 {display: none;}
 }
 /* 화면 너비 0 ~ 480px */
 @media (max-width: 480px) {
@@ -475,4 +485,9 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 
 	/* 이미지 라이트 박스 1단의 8개씩 총 8개 보이기 */
 	.square a {width: 100%;}
+
+	/* col7,8,9 사이드 컨텐츠(이미지 1개씩 2단 출력) */
+	.content_right .column {width: 100%;}
+	.content_right .column.col7 {border-right: 0; border-bottom: 1px solid #dbdbdb;}
+
 }
