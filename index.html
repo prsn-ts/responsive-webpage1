@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"> <!-- 모바일에서 홈페이지를 보면 모바일 화면 크기에 맞게 반응형으로 맞춰서 보여주는 기능 -->
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="반응형 사이트 따라하기">
+    <meta name="keywords" content="반응형사이트, 웹퍼블리셔, 웹접근성, HTML5, webstoryboy, webs">
+    <title>반응형 사이트 만들기 : 문서 셋팅</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/lightgallery.css"> <!-- lightgallery css 연동 -->
+
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="반응형 사이트 만들기(title)" />
+    <meta property="og:url" content="http://richclub8.dothome.co.kr/responsive/html5/index.html" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="반응형 사이트 만들기(site_name)" />
+    <meta property="og:description" content="반응형 사이트 따라하기(description)" />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="반응형 사이트 만들기(title)" />
+    <meta name="twitter:description" content="반응형 사이트 만들기(description)." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="icon/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" href="icon/favicon-152.png">
+    <link rel="icon" href="icon/favicon-64.png">
+    <link rel="icon" href="icon/favicon-16.png" sizes="16x16"> 
+    <link rel="icon" href="icon/favicon-32.png" sizes="32x32"> 
+    <link rel="icon" href="icon/favicon-48.png" sizes="48x48"> 
+    <link rel="icon" href="icon/favicon-64.png" sizes="64x64"> 
+    <link rel="icon" href="icon/favicon-128.png" sizes="128x128">
+
+    <!-- 웹 폰트 --> <!-- 실무에서 웹 폰트는 이렇게 많이 사용하면 안된다 용량을 많이 잡아 먹는다고 한다. -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+    <!-- HTLM5shiv ie6~8 -->
+    <!--[if lt IE 9]> 
+        <script src="js/html5shiv.min.js"></script>
+        <script type="text/javascript">
+            alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+        </script>
+    <![endif]-->
+
+
+</head>
+<body>
+	
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <div class="header_menu">
+                        <a href="#">Blug</a>
+                        <a href="#">Github</a>
+                        <a href="#">Webstandard</a>
+                    </div>
+                    <!-- //header_menu -->
+                    <div class="header_tit">
+                        <h1>Professional Web Publisher</h1><br>
+                        <a href="http://prsnts01.dothome.co.kr/responsive/html5/index.html">responsive practice space</a>
+                    </div>
+                    <!-- //header_tit -->
+                    <div class="header_icon">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-html5" aria-hidden="true"></i><span>HTML5</span></a></li>
+                            <li><a href="#"><i class="fa fa-github"aria-hidden="true"></i><span>Github</span></a></li>
+                            <li><a href="#" class="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i><span>Facebook</span></a></li>
+                            <li><a href="#" class="Twitter"><i class="fa fa-twitter"aria-hidden="true"></i><span>Twitter</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- //header_icon -->
+
+                    <!-- 
+                        https://developers.facebook.com/tools/debug/
+                        https://cards-dev.twitter.com/validator
+                    -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <nav id="nav">
+        <div class="container"> <!-- 가운데 정렬하기 위함. -->
+            <div class="row"> <!-- 내용을 여백 설정하기 위함.-->
+                <div class="nav"> <!-- 실제 내비게이션 컨텐츠 내용 -->
+                    <h2 class="ir_su">반응형 사이트 전체 메뉴</h2>
+                    <div>
+                        <h3>HTML Reference</h3>
+                        <ol>
+                            <li><a href="#">HTML 태그(Tag)</a></li>
+                            <li><a href="#">블록 요소/인라인 요소</a></li>
+                            <li><a href="#">DTD 선언</a></li>
+                            <li><a href="#">언어 속성 설정</a></li>
+                            <li><a href="#">HTML &lt;title&gt;</a></li>
+                            <li><a href="#">HTML &lt;meta&gt;</a></li>
+                            <li><a href="#">특수문자</a></li>
+                            <li><a href="#">하이퍼 링크</a></li>
+                            <li><a href="#">HTML &lt;style&gt;</a></li>
+                            <li><a href="#">HTML &lt;html&gt;</a></li>
+                            <li><a href="#">HTML &lt;head&gt;</a></li>
+                            <li><a href="#">HTML &lt;div&gt;</a></li>
+                            <li><a href="#">HTML &lt;colgroup&gt;</a></li>
+                            <li><a href="#">HTML &lt;caption&gt;</a></li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3>CSS  Reference</h3>
+                        <ol>
+                            <li><a href="#">CSS 선택자</a></li>
+                            <li><a href="#">CSS 단위</a></li>
+                            <li><a href="#">CSS 색상</a></li>
+                            <li><a href="#">CSS 선언 방법</a></li>
+                            <li><a href="#">상대주소와 절대주소</a></li>
+                            <li><a href="#">CSS float</a></li>
+                            <li><a href="#">이미지 표현 방법</a></li>
+                            <li><a href="#">이미지 스프라이트</a></li>
+                            <li><a href="#">IR 효과</a></li>
+                            <li><a href="#">이미지 최적화</a></li>
+                            <li><a href="#">background-color</a></li>
+                            <li><a href="#">border-style</a></li>
+                            <li><a href="#">font-size</a></li>
+                            <li><a href="#">text-align</a></li>
+                        </ol>
+                    </div>
+                    <div class="last">
+                        <h3>Webstandard</h3>
+                        <ol>
+                            <li><a href="#">웹 표준</a></li>
+                            <li><a href="#">웹 접근성</a></li>
+                            <li><a href="#">W3C</a></li>
+                            <li><a href="#">웹 접근성 연구소</a></li>
+                            <li><a href="#">네이버 널리</a></li>
+                            <li><a href="#">다음 다룸</a></li>
+                            <li><a href="#">Webstandard</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+    <article id="title"> <!-- 타이틀의 전체 영역 -->
+        <div class="container"> <!-- 가운데 정렬하기 위함. -->
+            <div class="title"> <!-- 타이틀 부분 본 내용 영역 -->
+                <h2>"나는 퍼블리셔다!"</h2>
+                <a href="#" class="btn"> 
+                    <i class="fa fa-angle-down" aria-hidden="true"></i> <!-- font awesome 라이브러리 사용 -->
+                    <span class="ir_su">전체메뉴 보기</span> <!-- ir_su 효과 적용 -->
+                </a>
+            </div>
+        </div> 
+    </article>
+    <!-- //title -->
+
+    <main>
+        <section id="cont_entire">
+            <div class="container"> <!-- 가운데 정렬을 위함. -->
+                <section class="cont_entire">    
+                    <h2 class="ir_su">반응형 사이트 컨텐츠</h2>
+                    <section class="content_left">
+                        <h3 class="ir_su">반응형 사이트 왼쪽 컨텐츠</h3>
+                        <article class="column col1">
+                            <h4 class="cont_tit">Menu</h4>
+                            <p class="cont_desc cont_desc1">Box-shadow를 이용한 마우스 오버 효과 메뉴입니다.</p>
+                            <!-- 메뉴 -->
+                            <div class="menu">
+                                <ul>
+                                    <ul class="menu_first">
+                                        <li><a href="#">Cafe <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                        <li><a href="#">Tutorial <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                        <li><a href="#">WebSite <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                    <ul class="menu_second">
+                                        <li><a href="#">Reference <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                        <li><a href="#">CSS3 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                        <li><a href="#">HTML5 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                    </ul>    
+                                </ul>
+                            </div>
+                            <!-- //메뉴 -->
+                        </article>
+
+                        <article class="column col2">
+                            <h4 class="cont_tit">Notice</h4>
+                            <p class="cont_desc cont_desc2">게시판 영역의 한줄 효과와 두줄 효과 게시판입니다.</p>
+                            <!-- 게시판 -->
+                            <div class="notice1">
+                                <h5>Notice1</h5>
+                                <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                <ul>
+                                    <li><a href="#">이 줄은 한줄 효과입니다.이 줄은 한줄 효과입니다.</a></li>
+                                    <li><a href="#">이 줄은 한줄 효과입니다.이 줄은 한줄 효과입니다.</a></li>
+                                    <li><a href="#">이 줄은 한줄 효과입니다.이 줄은 한줄 효과입니다.</a></li>
+                                    <li><a href="#">이 줄은 한줄 효과입니다.이 줄은 한줄 효과입니다.</a></li>
+                                </ul>
+                            </div>
+                            <!-- //게시판 -->
+
+                            <!-- 게시판2 -->
+                            <div class="notice2">
+                                <h5>Notice2</h5>
+                                <a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                <ul>
+                                    <li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+                                    <li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+                                    <li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+                                    <li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+                                </ul>
+                            </div>
+                            <!-- //게시판2 -->
+
+                        </article>
+                        <article class="column col3">
+                            <h4 class="cont_tit">Blog</h4>
+                            <p class="cont_desc cont_desc3">해상도에 따라 이미지를 다르게 표현하는 방법입니다.</p>
+                            <!-- blog1 -->
+                                <div class="blog1">
+                                    <h5 class="ir_su">image1</h5>
+                                    <figure>
+                                        <!-- 고해상도 이미지 지원방법1
+                                        <img src="img/blog1_@1.jpg" class="img-normal" alt="normal image">
+                                        <img src="img/blog1_@2.jpg" class="img-retina" alt="retina image" width="100%">
+                                        -->
+                                        <!-- 고해상도 이미지 지원방법2 -->
+                                        <img src="img/blog3_@1.jpg" srcset="img/blog3_@1.jpg 1x, img/blog3_@2.jpg 2x, img/blog3_@3.jpg 3x">
+                                        
+                                        <figcaption>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</figcaption>
+                                    </figure>
+                                </div>
+                            <!-- //blog1 -->
+                            <!-- blog2 -->
+                                <div class="blog2 mt15">
+                                    <!-- 고해상도 이미지 지원방법3(background 속성) -->
+                                    <div class="img-retina">
+                                        <h5>image2</h5>
+                                    </div>
+                                    <p>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</p>
+                                </div>
+                            <!-- //blog2 -->
+
+                        </article>
+                    </section>
+                    <section class="content_center">
+                        <h3 class="ir_su">반응형 사이트 가운데 컨텐츠</h3>
+                        <article class="column col4">
+                            <h4 class="cont_tit">Slick Slider</h4>
+                            <p class="cont_desc cont_desc4">slick.js를 이용한 이미지 슬라이드 효과입니다.</p>
+                            <!-- 이미지 슬라이드 -->
+                                <div class="slider"> <!-- .slider를 통해 jquery를 이용해서 이미지 가져오고 이미지 개수 파악하고 방향설정하고 위치파악하는등 여러가지를 다함 -->
+                                    <div> <!-- slider 플러그인이 div 박스로 잡혀있기 때문에 생성 -->
+                                        <figure> <!-- 이미지 불러올 때 많이씀 -->
+                                            <img src="img/slider001.jpg" alt="이미지1">
+                                            <figcaption><em>Reponsive Site</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption> <!-- 이미지 설명 용도로 씀 -->
+                                        </figure>
+                                    </div>
+                                    <div> <!-- slider 플러그인이 div 박스로 잡혀있기 때문에 생성 -->
+                                        <figure> <!-- 이미지 불러올 때 많이씀 -->
+                                            <img src="img/slider001.jpg" alt="이미지2">
+                                            <figcaption><em>Reponsive Site</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption> <!-- 이미지 설명 용도로 씀 -->
+                                        </figure>
+                                    </div>
+                                    <div> <!-- slider 플러그인이 div 박스로 잡혀있기 때문에 생성 -->
+                                        <figure> <!-- 이미지 불러올 때 많이씀 -->
+                                            <img src="img/slider001.jpg" alt="이미지3">
+                                            <figcaption><em>Reponsive Site</em><span>슬라이드 플러그인을 이용한 반응형 이미지 슬라이드 입니다.</span></figcaption> <!-- 이미지 설명 용도로 씀 -->
+                                        </figure>
+                                    </div>
+                                </div>
+                            <!-- //이미지 슬라이드 -->
+                        </article>
+                        <article class="column col5">
+                            <h4 class="cont_tit">Blend Effect</h4> <!-- css3에서 지원 -->
+                            <p class="cont_desc cont_desc5">background-blend-mode와 mix-blend-mode</p> <!-- 포토샵으로만 구현하던걸 css 기능으로 구현이 가능하게됨. -->
+                            <!-- light box -->
+                            <div class="lightbox square clearfix"><!-- 상황에 맞는 클래스로 css 주기위한 여러 클래스 작서 -->
+                                <a href="img/light01_s.jpg"><img src="img/light01.jpg" alt="이미지"><em>blur</em></a>
+                                <a href="img/light02_s.jpg"><img src="img/light02.jpg" alt="이미지"><em>brightness</em></a>
+                                <a href="img/light03_s.jpg"><img src="img/light03.jpg" alt="이미지"><em>contrast</em></a>
+                                <a href="img/light04_s.jpg"><img src="img/light04.jpg" alt="이미지"><em>grayscale</em></a>
+                                <a href="img/light05_s.jpg"><img src="img/light05.jpg" alt="이미지"><em>hur-rotate</em></a>
+                                <a href="img/light06_s.jpg"><img src="img/light06.jpg" alt="이미지"><em>invert</em></a>
+                                <a href="img/light07_s.jpg"><img src="img/light07.jpg" alt="이미지"><em>opacity</em></a>
+                                <a href="img/light08_s.jpg"><img src="img/light08.jpg" alt="이미지"><em>saturate</em></a>
+                                <a href="img/light09_s.jpg"><img src="img/light09.jpg" alt="이미지"><em>sepia</em></a>
+                                <a href="img/light10_s.jpg"><img src="img/light10.jpg" alt="이미지"><em>Mix</em></a>
+                            </div>
+                            <!-- //light box -->
+                        </article>
+                        <article class="column col6">
+                            <h4 class="cont_tit">Video</h4>
+                            <p class="cont_desc cont_desc6">반응형 영상을 보여주는 영역입니다.</p>
+                            <!-- video -->
+                                <!-- 비디오 나타내는 방법 1(비디오 다운받은 후 다운 받은 파일을 서버에 업로드(해당 파일 우클릭 -> SFTP/FTP 클릭 -> Upload file))
+                                <video autoplay="autoplay" controls="controls" loop="loop">
+                                    <source src="img/silent partner - hills behind.mp4" type="video/mp4">
+                                </video> 
+                                -->
+                                <!-- 비디오 나타내는 방법 2(유튜브 동영상 공유하기 버튼 클릭 -> "embed" 클릭 -> 코드들을 복사해서 붙여넣기) */ -->
+                                <div class="video">
+                                    <iframe src="https://www.youtube.com/embed/Bt0DFFlxzVk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            <!-- //video -->
+                        </article>
+                    </section>
+                    <section class="content_right">
+                        <h3 class="ir_su">반응형 사이트 오른쪽 컨텐츠</h3>
+                        <article class="column col7">
+                            <h4 class="cont_tit">Title</h4>
+                            <p class="cont_desc cont_desc7">이 곳은 설명 부분입니다</p>
+                        </article>
+                        <article class="column col8">
+                            <h4 class="cont_tit">Title</h4>
+                            <p class="cont_desc cont_desc8">이 곳은 설명 부분입니다</p>
+                        </article>
+                        <article class="column col9">
+                            <h4 class="cont_tit">Title</h4>
+                            <p class="cont_desc cont_desc9">이 곳은 설명 부분입니다</p>
+                        </article>
+                    </section>
+                </section>
+            </div>
+        </section>
+    </main>
+    <!-- //contents -->
+
+    <footer id="footer">
+        <div class="container"> <!-- 가운데 정렬을 위함. -->
+            <h2>반응형 사이트 푸터</h2>
+        </div>
+    </footer>
+    <!-- //footer -->
+	
+    <!-- JavaScript Libraries -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/modernizr-custom.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/lightgallery.min.js"></script> <!-- lightgallery js 연동 -->
+    <script>
+        //라이트 박스
+        $(".lightbox").lightGallery({
+
+        }); 
+        //이미지 슬라이더
+        $(".slider").slick({
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true, //화살표 보이게 설정.
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        autoplay: true // 600px 이하로 화면비율 떨어질 시 버튼 모양이 이상해서 어쩔 수 없이 자동플레이 멈춤.(true로 바꾸고 다시 해보니까 화살표가 제 위치에 잘 존재함 ㄷㄷ;)
+                        }
+                }
+            ]
+        });
+        //sns 공유하기
+        //http://www.facebook.com/sharer.php?u={페이지 제목}&t={페이지링크}
+        //http://twitter.com/intent/tweet?text={페이지 제목}&url={페이지링크}
+        //https://share.naver.com/web/shareView.nhn?url={페이지링크}&title={페이지 제목}
+        //https://plus.google.com/share?url={페이지링크}&t={페이지 제목}
+        $(".Facebook").click(function(e){
+            e.preventDefault();
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' +encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebooksharedialog', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=300, width=600'); 
+        });
+        $(".Twitter").click(function(e){
+            e.preventDefault();
+            window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=300, width=600');
+        });
+    </script>
+</body>
+</html>
