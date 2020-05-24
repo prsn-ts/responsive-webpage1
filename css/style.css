@@ -97,7 +97,8 @@ body {background: url(../img/header_bg.jpg) repeat-x center top; }
 }
 
 /* 전체 메뉴 */
-.nav {overflow: hidden; padding: 25px 0; display: none; /*display: none;로 설정. 이 부분은 나중에 전체메뉴 보이기/숨기기 버튼을 통해 스크립트로 짤 예정.*/}
+.nav {overflow: hidden; padding: 0; height: 0;}
+
 .nav > div {float: left; width: 40%;} /* html reference, css reference, Webstoryboy 부분 왼쪽 정렬 */
 .nav > div:last-child {width: 20%;}
 .nav > div ol {overflow: hidden;}

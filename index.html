@@ -386,6 +386,61 @@
     <script src="js/slick.min.js"></script>
     <script src="js/lightgallery.min.js"></script> <!-- lightgallery js 연동 -->
     <script>
+        //전체메뉴 접고 펼치기
+        var slideOpen = false; //슬라이드 열렸는지 검사하는 변수.
+        var initHeight = 0; //height 값을 저장할 변수.
+        var heightChecked = false; //height 값이 변했는 지 검사하는 변수.
+
+            // btn 클래스(여기선, 전체메뉴 나오게 하는 버튼)를 클릭했을 때(event) 함수 발동.
+            document.querySelector(".btn")
+            .addEventListener("click", function(e){
+                let allMenu = document.querySelector(".nav"); //let 예약어는 ES6(ECMAScript6)에 추가된 문법이다 {}(블럭) 범위에 해당하는 유효범위를 가지므로 var보다 좀더 세분화한 범위를 가져야할 때 사용하면 좋다. -> var 말고 let 사용을 권장.
+
+                // heightChecked 변수 값이 false일때는 if문 수행, true 일때는 else문 수행.
+                // height 값이 변했을 때(true, false)를 판단하여 각기 다른 동작을 취함.
+                if(!heightChecked){
+                    initHeight = allMenu.scrollHeight; // scrollHeight -> 보이지 않는 영역의 높이를 구하는 속성.
+                    heightChecked = true; //height 값을 확인했다고 명시적으로 표시
+                }else{
+                    initHeight = 0;
+                    heightChecked = false; //height 값이 초기값(0)으로 돌아간 것을 명시적으로 표시.
+                }
+
+                // 슬라이드가 닫혀있을 때(버튼을 누르지 않았을 때) 실행 부분.
+                if(!slideOpen){
+                    e.preventDefault(); // a태그의 기본 특성상 누르면 맨 윗페이지로 이동되는 것을 방지함.
+                    let angle = document.querySelector("i.fa-angle-down");
+                    angle.setAttribute("class", "fa fa-angle-up"); // 동적으로 속성을 변경하는 구문.
+                    
+                    /* 자바스크립트로 css 효과주는 방법 1
+                    allMenu.style.height = initHeight + "px";
+                    allMenu.style.padding = '25px 0';
+                    allMenu.style.transition = 'all 0.5s ease';
+                    */
+                    // 자바스크립트로 css 효과주는 방법 2
+                    allMenu.style.cssText = `height: ${initHeight}px; padding: 25px 0; transition: all 0.5s ease`;
+
+                    slideOpen = true; // 슬라이드가 열려있다는 것을 의미.
+                }
+                // 슬라이드가 열려있을 때 실행 부분.
+                else{
+                    e.preventDefault(); // a태그의 기본 특성상 누르면 맨 윗페이지로 이동되는 것을 방지함.
+                    let angle = document.querySelector("i.fa-angle-up");
+                    angle.setAttribute("class", "fa fa-angle-down"); // 동적으로 속성을 변경하는 구문.
+
+                    /* 자바스크립트로 css 효과주는 방법 1
+                    allMenu.style.height = initHeight + "px";
+                    allMenu.style.padding = '25px 0';
+                    allMenu.style.transition = 'all 0.5s ease';
+                    */
+                    // 자바스크립트로 css 효과주는 방법 2
+                    allMenu.style.cssText = `height: ${initHeight}px; padding: 0; transition: all 0.5s ease`;
+
+                    slideOpen = false; // 슬라이드가 닫혀있다는 것을 의미.
+                }
+            });
+
+
         //라이트 박스
         $(".lightbox").lightGallery({
 
