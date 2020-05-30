@@ -379,6 +379,48 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 .video {position: relative; width: 100%; padding-bottom: 60%;}
 .video iframe {position: absolute; width: 100%; height: 100%;}
 
+/* effect 효과 1 */
+.side1 {position: relative; perspective: 600px;}
+/* perspective -> 원근법 원리. 픽셀이 커질 수록 멀리서 보는 효과(반대로 작을 수록 가까이서 보는 효과.) */
+.side1 .front {
+	transform-style: preserve-3d; 
+	transform: rotateY(0deg);
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+}/* transform-style: preserve-3d; -> transform 스타일을 3d로 보여주겠다는 의미. 보통 2d로 보여짐. 
+	transform: rotateY(180deg); -> 앞면에 배치된 이미지를 갖고있는 front 클래스이다 처음엔 -180도 각도를 가지고 시작한다.
+	backface-visibility: hidden; -> front 클래스의 뒷면을 보이지 않게 설정. 이 속성을 통해 이미지가 회전할 때
+		back 클래스의 이미지가 보여질 수 있게된다. */
+.side1:hover .front {
+	transform: rotateY(180deg);
+}/* transform: rotateY(180deg); -> y축을 기준으로 rotate(회전)을 180도 시계방향으로 돌리겠다는 의미.
+	마우스 오버 했을 시에 앞에 배치된 front 클래스는 0도(마우스 오버 전)에서 180도(마우스 오버 후)로 돌 수 있게(시계방향) 설정. */
+.side1 .front img {
+	display: block;
+}/* 부모 요소인 front 클래스의 공간 크기에 맞춰주기위해서 display: block;로 설정. */
+.side1 .back {
+	transform-style: preserve-3d; transform: rotateY(-180deg); transition: all 0.5s ease-in-out;
+	position: absolute; top: 0; left: 0; 
+	width: 100%; height: 100%; z-index: -1;
+	background: #4038dc;
+}/* transition: all 0.5s ease-in-out; -> css의 속성값이 변하는 모든(all) 속성에 0.5초동안 
+		ease-in-out(천천히 가다가 빨리갔다가 다시 천천히 도착하는 효과)를 지정.
+	width: 100%; height: 100%; -> position: absolute; top: 0; left: 0;를 통해 부모 요소에 맨 왼쪽 위에 붙어있으므로
+	 	크기를 맞추기위해 가로, 세로 100% 설정.
+	z-index: -1; -> z축을 기준으로 -1로 설정. 화면에 여러개의 요소가 겹칠 때 보이는 순서를 정할 때 사용.
+	transform: rotateY(-180deg); -> 뒷면에 배치된 back 클래스(이다 처음엔 -180도 각도를 가지고 시작한다. */
+.side1:hover .back {
+	transform: rotateY(0deg);
+}/* 마우스 오버 했을 시에 뒤에 배치된 back 클래스는 -180도(마우스 오버 전)에서 0도(마우스 오버 후)로 돌 수 있게(시계방향) 설정. */
+.side1 .back i {
+	position: absolute; top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 40px; color: #fff;
+}/* position: absolute; top: 50%; left: 50%; -> i태그의 폰트어썸 이미지(글꼴 특성 지님)를 부모 요소인 back 클래스의 중앙에 배치하기 위한 설정. 
+	transform: translate(-50%, -50%); -> x축, y축을 지정해 이동 시키는 속성.
+		여기서는 i태그(폰트어썸 이미지)의 x축 -50%(자신의 width 값의 절반만큼 왼쪽으로 이동), y축 -50%(자신의 height 값의 절반만큼 위쪽으로 이동)로 이동하여 완전히 중앙에 정렬시키기 위함이다.
+	font-size: 40px;, color: #fff; -> 폰트 어썸은 이미지처럼 생겼지만 글꼴의 특성을 지니고 있기 때문에 글자 색깔을 변경하면 이미지 색깔이 변함.(글자 크기도 마찬가지.) */
+
 /* 푸터 */
 .footer {text-align: center; padding: 30px 50px;}
 .footer li {position: relative; display: inline; padding: 0 7px 0 11px; white-space: nowrap;}
