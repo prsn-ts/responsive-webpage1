@@ -388,7 +388,7 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 	transition: all 0.5s ease-in-out;
 	backface-visibility: hidden;
 }/* transform-style: preserve-3d; -> transform 스타일을 3d로 보여주겠다는 의미. 보통 2d로 보여짐. 
-	transform: rotateY(180deg); -> 앞면에 배치된 이미지를 갖고있는 front 클래스이다 처음엔 -180도 각도를 가지고 시작한다.
+	transform: rotateY(0deg); -> 앞면에 배치된 이미지를 갖고있는 front 클래스이다 처음엔 0도 각도를 가지고 시작한다.
 	backface-visibility: hidden; -> front 클래스의 뒷면을 보이지 않게 설정. 이 속성을 통해 이미지가 회전할 때
 		back 클래스의 이미지가 보여질 수 있게된다. */
 .side1:hover .front {
@@ -408,7 +408,7 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 	width: 100%; height: 100%; -> position: absolute; top: 0; left: 0;를 통해 부모 요소에 맨 왼쪽 위에 붙어있으므로
 	 	크기를 맞추기위해 가로, 세로 100% 설정.
 	z-index: -1; -> z축을 기준으로 -1로 설정. 화면에 여러개의 요소가 겹칠 때 보이는 순서를 정할 때 사용.
-	transform: rotateY(-180deg); -> 뒷면에 배치된 back 클래스(이다 처음엔 -180도 각도를 가지고 시작한다. */
+	transform: rotateY(-180deg); -> 뒷면에 배치된 back 클래스이다 처음엔 -180도 각도를 가지고 시작한다. */
 .side1:hover .back {
 	transform: rotateY(0deg);
 }/* 마우스 오버 했을 시에 뒤에 배치된 back 클래스는 -180도(마우스 오버 전)에서 0도(마우스 오버 후)로 돌 수 있게(시계방향) 설정. */
@@ -420,6 +420,75 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 	transform: translate(-50%, -50%); -> x축, y축을 지정해 이동 시키는 속성.
 		여기서는 i태그(폰트어썸 이미지)의 x축 -50%(자신의 width 값의 절반만큼 왼쪽으로 이동), y축 -50%(자신의 height 값의 절반만큼 위쪽으로 이동)로 이동하여 완전히 중앙에 정렬시키기 위함이다.
 	font-size: 40px;, color: #fff; -> 폰트 어썸은 이미지처럼 생겼지만 글꼴의 특성을 지니고 있기 때문에 글자 색깔을 변경하면 이미지 색깔이 변함.(글자 크기도 마찬가지.) */
+
+/* effect 효과 2 */
+.side2 {position: relative; perspective: 600px;}
+/* perspective -> 원근법 원리. 픽셀이 커질 수록 멀리서 보는 효과(반대로 작을 수록 가까이서 보는 효과.) */
+.side2 .front {
+	transform-style: preserve-3d;
+	transform: rotateY(0deg);
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+}/* transform-style: preserve-3d; -> transform 스타일을 3d로 보여주겠다는 의미. 보통 2d로 보여짐. 
+	transform: rotateY(0deg); -> 앞면에 배치된 이미지를 갖고있는 front 클래스이다 처음엔 0도 각도를 가지고 시작한다.
+	backface-visibility: hidden; -> front 클래스의 뒷면을 보이지 않게 설정. 이 속성을 통해 이미지가 회전할 때
+		back 클래스의 공간이 보여질 수 있게된다. */
+.side2 .front figcaption {
+	position: absolute; top: 50%; left: 50%;
+	transform: translate3d(-50%, -50%, 100px);
+	background: rgba(0,0,0,0.4); color: #fff; padding: 3px 19px;
+	white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+	font-size: 20px; font-weight: bold; font-family: 'Abel', sans-serif;
+	backface-visibility: hidden;
+}/* position: absolute; top: 50%; left: 50%; -> side2 클래스를 기준으로 맨위에서 50%, 맨왼쪽에서 50% 이동한 위치에 배치함.
+	transform: translate3d(-50%, -50%, 100px); -> 이번 이펙트 추가할 때 처음 사용했다.
+		사용방법은 translate3d(x축 , y축, z축) 이런 식이며 좀더 자세히 말한다면
+		x축(-50%) -> 요소의 width 값의 50%만큼 왼쪽으로(-, 마이너스) 이동(퍼센트 기준)
+		y축(-50%) -> 요소의 height 값의 50%만큼 아래로(-, 마이너스) 이동(퍼센트 기준)
+		z축(100px) -> z축은 3차원부터 존재하는 개념이며, 수치가 올라가면 갈수록 앞으로 튀어나와보이는 효과
+	white-space: nowrap; text-overflow: ellipsis; overflow: hidden; -> 한줄 효과를 위한 설정.
+	font-size: 20px; font-weight: bold; font-family: 'Abel', sans-serif; -> 글자 크기, 글자 진하게 표시, 글씨체 설정
+	backface-visibility: hidden; -> 
+	backface-visibility: hidden; -> front 클래스의 뒷면을 보이지 않게 설정. 이 속성을 통해 이미지가 회전할 때
+		back 클래스의 이미지가 보여질 수 있게된다. */
+.side2:hover .front {transform: rotateY(180deg);}
+/* 마우스 안올렸을 때 0도 였다가 side2:hover 했을 때 front 클래스에 y축을 기준으로 180도 증가한(0도+180도=180도) 180도까지 시계방향으로 회전하라는 의미. */
+.side2 .back {
+	position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%; z-index: -1;
+	transform-style: preserve-3d;
+	transform: rotateY(-180deg);
+	transition: all 0.5s ease-in-out;
+	backface-visibility: hidden;
+}/* position: absolute; top: 50%; left: 50%; -> side2 클래스를 기준으로 맨위에서 50%, 맨왼쪽에서 50% 이동한 위치에 배치함.
+	width: 100%; height: 100%; z-index: -1; -> side2 클래스에 기준이 잡힌 back 클래스이므로 가로폭과 세로폭을 side2 클래스 공간에 맞춰 각각 100%으로 맞춘다.
+	transform-style: preserve-3d; -> transform 스타일을 3d로 보여주겠다는 의미. 보통 2d로 보여짐. 
+	transform: rotateY(-180deg); -> 뒷면에 배치된 이미지를 갖고있는 back 클래스이다 처음엔 =180도 각도를 가지고 시작한다.
+	backface-visibility: hidden; -> back 클래스의 뒷면을 보이지 않게 설정. 이 속성을 통해 back 클래스의 뒷면의 공간이 
+		mouse를 뗐을 때(hover 미적용시) 가려질 수 있게된다. */
+.side2 .back figcaption {
+	position: absolute; top: 50%; left: 50%;
+	transform: translate3d(-50%, -50%, 100px);
+	background: rgba(0,0,0,0.4); color: #fff; padding: 3px 19px;
+	white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+	font-size: 20px; font-weight: bold; font-family: 'Abel', sans-serif;
+	backface-visibility: hidden;
+}/* position: absolute; top: 50%; left: 50%; -> side2 클래스를 기준으로 맨위에서 50%, 맨왼쪽에서 50% 이동한 위치에 배치함.
+	transform: translate3d(-50%, -50%, 100px); -> 이번 이펙트 추가할 때 처음 사용했다.
+		사용방법은 translate3d(x축 , y축, z축) 이런 식이며 좀더 자세히 말한다면
+		x축(-50%) -> 요소의 width 값의 50%만큼 왼쪽으로(-, 마이너스) 이동(퍼센트 기준)
+		y축(-50%) -> 요소의 height 값의 50%만큼 아래로(-, 마이너스) 이동(퍼센트 기준)
+		z축(100px) -> z축은 3차원부터 존재하는 개념이며, 수치가 올라가면 갈수록 앞으로 튀어나와보이는 효과
+	white-space: nowrap; text-overflow: ellipsis; overflow: hidden; -> 한줄 효과를 위한 설정.
+	font-size: 20px; font-weight: bold; font-family: 'Abel', sans-serif; -> 글자 크기, 글자 진하게 표시, 글씨체 설정
+	backface-visibility: hidden; -> 
+	backface-visibility: hidden; -> front 클래스의 뒷면을 보이지 않게 설정. 이 속성을 통해 이미지가 회전할 때
+		back 클래스의 이미지가 보여질 수 있게된다. */
+.side2:hover .back {transform: rotateY(0deg);}
+/* 마우스 안올렸을 때 -180도 였다가 side2:hover 했을 때 back 클래스에 y축을 기준으로 180도 증가한(-180도+180도=0도) 0도까지 시계방향으로 회전하라는 의미. */
+
+
+
 
 /* 푸터 */
 .footer {text-align: center; padding: 30px 50px;}
