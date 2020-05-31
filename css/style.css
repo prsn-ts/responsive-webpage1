@@ -397,7 +397,7 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 	마우스 오버 했을 시에 앞에 배치된 front 클래스는 0도(마우스 오버 전)에서 180도(마우스 오버 후)로 돌 수 있게(시계방향) 설정. */
 .side1 .front img {
 	display: block;
-}/* 부모 요소인 front 클래스의 공간 크기에 맞춰주기위해서 display: block;로 설정. */
+}/* 부모 요소인 front 클래스랑 공간 크기를 맞춰주기위해서 display: block;로 설정. */
 .side1 .back {
 	transform-style: preserve-3d; transform: rotateY(-180deg); transition: all 0.5s ease-in-out;
 	position: absolute; top: 0; left: 0; 
@@ -487,6 +487,39 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 .side2:hover .back {transform: rotateY(0deg);}
 /* 마우스 안올렸을 때 -180도 였다가 side2:hover 했을 때 back 클래스에 y축을 기준으로 180도 증가한(-180도+180도=0도) 0도까지 시계방향으로 회전하라는 의미. */
 
+/* effect 효과 3 */
+.side3 {position: relative; overflow: hidden; box-shadow: inset 0 0 0 150px black;}
+/* position: relative; -> 하위 자식 요소들의 포지션(위치)의 기준이 되는 요소.
+   overflow: hidden; -> 이 요소 밖으로는 보이징않게 설정. figcaption 요소를 위해 필요함.
+   box-shadow: inset 0 0 0 150px black; -> img 요소에 opacity: 0.3;과 같이 사용했을 때 효과를 발휘. 
+   		요소의 안쪽(inset)으로 그림자효과를 지정함. */
+.side3 img {display: block;}
+/* 부모 요소인 figure 공간 크기와 이미지 크기를 맞춰주기위해서 display: block;로 설정. */
+.side3:hover img {opacity: 0.4;}
+/* side3 클래스 공간에 마우스를 올렸을 때 이미지 어두워지는 효과.
+		불투명도 0.4로 지정. box-shadow 속성이랑 같이 사용함. */
+.side3 figure figcaption {
+	position: absolute; top: 50%; left: 100%;
+	transform: translateY(-50%) rotateZ(270deg);
+	transition: all 0.3s ease-in-out; opacity: 0; padding: 20px 20px;
+}/* position: absolute; top: 50%; left: 100%; -> side3 클래스의 기준으로 맨위에서 50% 아래에(Y축), 맨왼쪽에서 100% 위치(X축)에 배치.
+	transform: translateY(-50%) rotateZ(270deg); -> translateY(-50%)로 Y축 재조정. rotateZ(270deg)로 마우스 오버시 회전하며 보이기위해 설정.
+	transition: all 0.3s ease-in-out; opacity: 0; padding: 20px 20px; -> 회전하는 모습을 보여주기위해 트랜지션 효과 지정.
+		패딩값 설정으로 글자 주위를 꾸며준다. */
+.side3:hover figure figcaption {
+	position: absolute; top: 50%; left: 50%;
+	transform: translate(-50%, -50%) rotateZ(0deg);
+	 opacity: 1; 
+}/* position: absolute; top: 50%; left: 50%; -> 마우스 오버시에 대략적으로 글자가 위치될 곳 선정.
+	transform: translate(-50%, -50%) rotateZ(0deg); -> position만으로는 예상하는 정확한 위치 선정이 힘들어 부가적으로 translate 설정.
+		rotateZ(0deg)로 270도(마우스 오버 X)에서 0도(마우스 오버 O)로 반시계방향으로 돌아가도록 설정. */
+.side3 h4{
+	background: #000; color: #fff; border-radius: 50px; padding: 20px 20px;
+	font-size: 20px; font-family: 'Abel', sans-serif;
+	text-transform: uppercase; text-align: center;
+}/* 배경색, 글자 색깔, 테두리 라운드효과 지정, 패딩 부여, 글자 크기, 글씨체, 대문자로 표시, 텍스트 가운데 정렬 등
+	글자 부분에 대한 모든 것을 선언. */
+.side3 em {font-weight: bold;} /* Effect 글씨 부분 진하게 표시 */
 
 
 
