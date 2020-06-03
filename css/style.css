@@ -1,6 +1,5 @@
 /* 레이아웃 */
 body {background: url(../img/header_bg.jpg) repeat-x center top; }
-#header {}
 #nav {background: #f6fdff;} /* 영역 구분을 위한 색상 지정 */
 #title {background: #eaf7fd; padding: 5px 0; margin: -4px 0 0;} /* 타이틀 전체 영역 색상 지정 */
 #cont_entire .container {
@@ -20,8 +19,6 @@ body {background: url(../img/header_bg.jpg) repeat-x center top; }
 .container {position: relative; /*.content_right{position: absolute;}의 기준점이다*/ width: 1200px; margin: 0 auto; /* background: rgba(0,0,0,0.3); */}
 
 /* 헤더 */
-.header { /*-> 원래는 height값이 있으나 화면 너비 600px 이하일 시 헤더메뉴 공간을 제외한 헤더공간이 사라지게 하는 방법.
-이 방법 말고도 */}
 .header .header_menu {text-align: right;}
 .header .header_menu a {color: #fff; padding: 8px 0 6px 10px; display: inline-block; 
 	transition: color 0.3s ease; font-family: 'Abel', sans-serif;}
@@ -144,21 +141,14 @@ body {background: url(../img/header_bg.jpg) repeat-x center top; }
 
 /* 컨텐츠 영역 */
 .column {padding: 15px;}
-.column.col1 {}
-.column.col2 {}
 .column.col3 {border-bottom: 0;}
-.column.col4 {}
-.column.col5 {}
 .column.col6 {border-bottom: 0;}
-.column.col7 {}
-.column.col8 {}
 .column.col9 {border-bottom: 0;}
 /* 컨텐츠 타이틀 */
 .column .cont_tit {color: #2F7FA6; font-size: 20px; padding-bottom: 5px;}
 .column .cont_desc {border-bottom: 1px dashed #dbdbdb; color: #878787; padding: 0 0 15px; margin: 0 0 15px; line-height: 18px;}
 
 /* 메뉴 */
-.menu {}
 .menu li {position: relative;}
 .menu li a {
     font-size: 16px; text-transform: uppercase;
@@ -374,6 +364,9 @@ position: absolute; left: 0; bottom: -30px; opacity: 1; transition: all .3s ease
 .square a:nth-child(8):hover img {filter: saturate(10%);}
 .square a:nth-child(9):hover img {filter: sepia(120%);}
 .square a:nth-child(10):hover img {filter: sepia(120%) hue-rotate(120deg);}
+button.lg-icon {
+	background-color: rgba(0,0,0,0);
+}
 
 /* 비디오 나타내는 방법 2 */
 .video {position: relative; width: 100%; padding-bottom: 60%;}
@@ -654,5 +647,4 @@ position: relation; 을 통해 position: absolute;의 기준점을 생성.(여�
 	/* col7,8,9 사이드 컨텐츠(이미지 1개씩 2단 출력) */
 	.content_right .column {width: 100%;}
 	.content_right .column.col7 {border-right: 0; border-bottom: 1px solid #dbdbdb;}
-
 }
